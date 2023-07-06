@@ -28,11 +28,20 @@ Descripción...
 ---
 ## Arquitectura
 
+![Esta es una imagen de ejemplo](https://github.com/Jhose0120/backcourse/blob/main/infrastructura%20simple.png?raw=true)
 ### Diagramas
 poner diagramas de secuencia, uml, etc
 
 ### Modelo de datos
 Poner diseño de entidades, Jsons, tablas, diagramas entidad relación, etc..
+
+---
+### Plan de pruebas
+* Crear protecto de pruebas que valide los siguientes casos de uso.
+
+  -Registrar usuario, crear review, simular que visitante puede leer el review escrito.
+
+### Integración continua
 
 ---
 ## Limitaciones
