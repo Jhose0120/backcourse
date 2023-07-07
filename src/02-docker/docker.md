@@ -30,3 +30,4 @@ show collections
 use("platzi_store")
 db.products.find()
 ´´´
+

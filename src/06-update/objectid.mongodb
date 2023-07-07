@@ -1,0 +1,14 @@
+use("platzi_store")
+
+db.products.updateOne(
+    //se usa el comando ObjectId("") cuando este es generado por el sistema
+    {_id: ObjectId("64a85440636b0441be474a42")},
+    //change => operators
+    {
+        $inc: {
+            price: 100
+        }
+    }
+)
+
+db.products.find()
