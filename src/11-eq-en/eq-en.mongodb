@@ -1,0 +1,28 @@
+use("platzi_store")
+
+//Using $eq implicit
+//db.inventory.find({qty: 20})
+//db.inventory.find({qty: { $eq: 20}})
+//db.inventory.find({"item.code": "123"})
+//db.inventory.find({"item.code": {$eq: "123"}})
+
+//using $ne
+//db.inventory.find({qty: {$ne: 20}})
+
+//as $en is query we can use update
+db.inventory.updateMany(
+    //query operators
+    { 
+        qty: {
+            $ne: 20
+        }
+    },
+    // update - operators
+    {
+        $inc:{
+            qty: 10
+        }
+    }
+)
+
+db.inventory.find()
