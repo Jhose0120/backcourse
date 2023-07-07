@@ -1,0 +1,12 @@
+use("platzi_store")
+//agregar valor al final de un array
+db.inventory.updateOne(
+    {
+        _id: 4 
+    },
+    {
+        $push: {
+            tags: "headphone"
+        }
+    }    
+)
