@@ -5,7 +5,7 @@ services:
     image: mongo:5.0
     ports:
       - 27017:27017
-    enviroment:
+    environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_USERNAME=root123
     volumes:
