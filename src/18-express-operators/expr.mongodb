@@ -1,0 +1,10 @@
+use("platzi_store")
+
+//db.monthlyBudget.find({spent: {$gte: 100}})
+
+// $expr compare a var with other var or value example when spent is more big than budget
+db.monthlyBudget.find({
+    $expr: {
+        $gte: ["$spent", "$budget"]
+    }
+})
