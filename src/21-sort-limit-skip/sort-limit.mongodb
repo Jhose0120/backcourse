@@ -1,0 +1,9 @@
+use("sample_training")
+// in sort 1 is ASC and -1 is DESC
+//db.zips.find({pop: {$gte: 100}}).sort({pop: -1}).limit(2)
+
+// skip is like offset in sql
+db.zips
+.find({pop: {$gte: 100}})
+.sort({pop: -1})
+.limit(2)
