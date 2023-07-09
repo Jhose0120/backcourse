@@ -1,0 +1,23 @@
+
+use("platzi_store")
+
+db.users.insertOne({
+    email: 'jasddsa@hotmail.com',
+    password: 'aqQSdsasd213dsa',
+    role: 'seller',
+    social_account: ['twiter', 'facebook'],
+    address: {
+        street: 'cr 891',
+        city: 'Cali',
+        zip: '21001'
+    },
+    shipping_address: {
+        street: 'cr 891',
+        city: 'Montersa',
+        zip: '21001'
+    }
+})
+
+db.users.find({
+    "address.city": "Monteria"
+})
