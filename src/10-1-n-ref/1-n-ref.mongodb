@@ -1,0 +1,66 @@
+use("platzi_store")
+
+db.orders.find({
+    user_id: ObjectId('64a9fdaca2870d9aca051151')
+})
+
+//SINCE USER
+db.users.aggregate([
+    {
+        $lookup: {
+            from: 'orders',
+            localField: '_id',
+            foreignField: 'user_id',
+            as: 'order'
+        }
+    }
+])
+
+
+//Specific query as a join with where
+// db.orders.aggregate([
+//     {
+//         $match: {
+//           _id: ObjectId('64aa08f5f73ad8ecba3dc87d')
+//         }
+//     },
+//     {
+//         $lookup: {
+//             from: 'users',
+//             localField: 'user_id',
+//             foreignField: '_id',
+//             as: 'user'
+//         }
+//     }
+// ])
+
+//todos los valores as a inner join
+// db.orders.aggregate([
+//     {
+//         $lookup: {
+//             from: 'users',
+//             localField: 'user_id',
+//             foreignField: '_id',
+//             as: 'user'
+//         }
+//     }
+// ])
+
+// db.orders.find({"items.qty":3})
+
+// db.orders.insertOne({
+//     user_id: ObjectId('64a9fdaca2870d9aca051151'),
+//     date: '2023-01-02',
+//     items:[
+//         {
+//             name: 'Zapatos',
+//             price: 120,
+//             qty: 1
+//         },
+//         {
+//             name: 'Otra cosa',
+//             price: 90,
+//             qty: 1
+//         }
+//     ]
+// })

@@ -1,0 +1,10 @@
+use("platzi_store")
+
+db.orders.findOne({_id: ObjectId('64aa185161ae30d9206b8aa0')})
+//orden de compra 64aa185161ae30d9206b8aa0
+db.orders.insertOne({
+    user_id: ObjectId('64a9fdaca2870d9aca051151'),
+    date: '2023-01-02',
+    total: 0,
+    items:[]
+})

@@ -1,0 +1,32 @@
+use("platzi_store")
+
+db.stores.aggregate([
+    {
+        $lookup: {
+          from: 'products',
+          localField: 'products_ids',
+          foreignField: '_id',
+          as: 'products'
+        }
+    }
+])
+
+// db.stores.insertMany([
+//     {
+//         name: 'Store 1',
+//         products_ids: [
+//             ObjectId('64a9a68ce581f6004fe46ac4'),
+//             ObjectId('64aa0f60c86a3e92d9610569')
+//         ]
+//     },
+//     {
+//         name: 'Store 1',
+//         products_ids: [
+//             ObjectId('64a9a68ce581f6004fe46ac4'),
+//             ObjectId('64aa0f60c86a3e92d9610569'),
+//             ObjectId('64aa0f60c86a3e92d961056a'),
+//             ObjectId('64aa0f60c86a3e92d961056b')
+//         ]
+//     }
+// ])
+

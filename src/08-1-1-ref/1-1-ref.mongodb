@@ -1,0 +1,30 @@
+use("platzi_store")
+
+//db.stores.findOne({storeId: 'ST001'})
+//db.stores_detail.findOne({storeId: 'ST001'})
+
+db.stores.aggregate([
+    {
+        $lookup: {
+            from: 'stores_detail',
+            localField: 'storeId',
+            foreignField: 'storeId',
+            as: 'detail'
+        }
+    }
+])
+
+// db.stores.insertOne({
+//     storeId: 'ST001',
+//     name: "Nico Store",
+//     address: 'Cr 234'
+// })
+
+// db.stores_detail.insertOne({
+//     storeId: 'ST001',
+//     description: 'tex text',
+//     manager: {
+//         email: 'jmestra@gmail.com',
+//         cellphone: '3142587896'
+//     }
+// })
